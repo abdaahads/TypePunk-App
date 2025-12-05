@@ -1,73 +1,88 @@
-# React + TypeScript + Vite
+# TypePunk - Cyberpunk Speed Racer ⌨️⚡
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 
 
-Currently, two official plugins are available:
+**Vibe Coding Assignment - Category 4: Interaction Heavy**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+TypePunk is a retro-futuristic typing speed test that transforms mundane typing practice into a high-stakes cyberpunk hacking simulation. It features real-time WPM tracking, visual feedback for accuracy, and persistent local high scores.
 
-## React Compiler
+## 🚀 Live Demo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# 
 
-## Expanding the ESLint configuration
+https://gemini.google.com/share/747f22717fcf
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# 
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+*   **Real-time WPM & Accuracy Engine**: Calculates speed and precision instantly as you type.
+    
+*   **Visual Feedback System**:
+    
+    *   Green/Cyan highlighting for correct characters.
+        
+    *   Red background & Screen Shake effects for errors.
+        
+    *   Dynamic WPM progress bar.
+        
+*   **Persistence**: High scores are saved to the browser's LocalStorage.
+    
+*   **Intentional Design**: Cyberpunk aesthetic with neon gradients, monospace typography, and glassmorphism UI.
+    
+*   **Mobile Responsive**: Fully functional on touch devices with virtual keyboards.
+    
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🛠 Tools Used
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# 
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+*   **Bolt.new**: Used for the initial scaffolding and Tailwind configuration.
+    
+*   **Claude 3.5 Sonnet**: Used to refine the WPM calculation logic and generate cyberpunk-themed quotes.
+    
+*   **React + Tailwind CSS**: The core stack for component-based UI and rapid styling.
+    
+*   **Lucide React**: For lightweight, consistent iconography.
+    
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🤖 Prompts That Worked
+
+# 
+
+> "Act as a Senior Frontend Dev. Build a typing speed test app with a cyberpunk aesthetic. Use Tailwind CSS for styling. The app needs to track WPM and accuracy in real-time. Store high scores in localStorage. Make the screen shake slightly when the user makes a typo."
+
+**Why it worked:** Giving a specific "vibe" (cyberpunk) and specific "interaction details" (screen shake on error) prevented the AI from generating a generic white-background typing test.
+
+## 🐛 Challenges & Learnings
+
+# 
+
+*   **Challenge:** The initial WPM calculation was jumpy because it calculated based on every keystroke interval.
+    
+*   **Fix:** Switched to a formula based on `(total_chars / 5) / time_elapsed_minutes` which smoothed out the number.
+    
+*   **Surprise:** How easy it was to implement the "screen shake" effect using a simple Tailwind conditional class (`translate-x-1`) triggered by React state.
+    
+
+## 📦 Setup Instructions
+
+# 
+
+1.  Clone the repo
+    
+2.  Run `npm install`
+    
+3.  Run `npm run dev`
+    
+4.  Open `http://localhost:5173`
+    
+
+## ⚠️ Known Limitations
+
+# 
+
+*   The cursor is currently a static blinking line at the end of the text string; moving the cursor back to edit previous mistakes is not fully supported in this version (Arcade mode style).
+    
+
+*Built for the Vibe Coding Assignment 2025*
